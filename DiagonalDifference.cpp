@@ -30,7 +30,7 @@ int main() {
     int diagonalSum1 = 0;
     int diagonalSum2 = 0;
     
-    // The current index of hte diagonals within the row
+    // The current index of the diagonals within the row
     size_t diagonalIndex1 = 0;
     size_t diagonalIndex2 = matrixSize-1;
     

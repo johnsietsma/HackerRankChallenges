@@ -10,7 +10,7 @@ SUM_OBJECTS=SimpleArraySum.o
 SUM_OBJECTS=VeryBigArraySum.o
 DIAGONAL_DIFFERENCE_OBJECTS=DiagonalDifference.o
 
-BINARIES=LonelyTest SimpleArraySumTest VeryBigArraySumTest DiagonalDifferenceTest
+BINARIES=LonelyInteger SimpleArraySum VeryBigArraySum DiagonalDifference
 
 all: $(BINARIES)
 
