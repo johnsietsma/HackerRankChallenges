@@ -12,10 +12,10 @@ int string_to_int( const string& str )
     return (stream >> res) ? res : 0;
 }
 
-void split( string& str, vector<int>& data )
+void split( string& str, vector<int>& data, const char delim )
 {
-    size_t currStartPos = str.find_first_not_of( ' ' );
-    size_t currEndPos = str.find_first_of( ' ', currStartPos );
+    size_t currStartPos = str.find_first_not_of( delim );
+    size_t currEndPos = str.find_first_of( delim, currStartPos );
     
     while( currStartPos != string::npos && currEndPos!=string::npos ) {
         assert( currEndPos > currStartPos );
@@ -24,7 +24,7 @@ void split( string& str, vector<int>& data )
         int number = string_to_int( token );
         data.push_back(number);
         
-        currStartPos = str.find_first_not_of( ' ', currEndPos );
-        currEndPos = str.find_first_of( ' ', currStartPos );
+        currStartPos = str.find_first_not_of( delim, currEndPos );
+        currEndPos = str.find_first_of( delim, currStartPos );
     }
 }

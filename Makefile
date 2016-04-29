@@ -11,8 +11,10 @@ BIG_ARRAY_OBJECTS=VeryBigArraySum.o
 DIAGONAL_DIFFERENCE_OBJECTS=DiagonalDifference.o
 SUM_OBJECTS=VeryBigArraySum.o
 PLUS_MINUS_OBJECTS=PlusMinus.o
+STAIRCASE_OBJECTS=Staircase.o
+TIME_CONVERSION_OBJECTS=TimeConversion.o
 
-BINARIES=LonelyInteger SimpleArraySum VeryBigArraySum DiagonalDifference PlusMinus
+BINARIES=LonelyInteger SimpleArraySum VeryBigArraySum DiagonalDifference PlusMinus Staircase TimeConversion
 
 all: $(BINARIES)
 
@@ -56,6 +58,24 @@ PlusMinusTest: PlusMinus
 
 PlusMinus: $(PLUS_MINUS_OBJECTS)
 	$(CC) $(LDFLAGS) $(PLUS_MINUS_OBJECTS) -o $@
+
+
+# Staircase
+StaircaseTest: Staircase
+	./Staircase < input/staircase1.txt
+
+PlusMinus: $(STAIRCASE_OBJECTS)
+	$(CC) $(LDFLAGS) $(STAIRCASE_OBJECTS) -o $@
+
+
+# Time conversion
+TimeConversionTest: TimeConversion
+	./TimeConversion < input/time1.txt
+	./TimeConversion < input/time2.txt
+	./TimeConversion < input/time3.txt
+
+PlusMinus: $(TIME_CONVERSION_OBJECTS)
+	$(CC) $(LDFLAGS) $(TIME_CONVERSION_OBJECTS) -o $@
 
 
 .cpp.o:
