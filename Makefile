@@ -4,8 +4,9 @@ LDFLAGS=
 OBJECTS=$(SOURCES:.cpp=.o)
 
 LONELY_OBJECTS=LonelyInteger.o
+SUM_OBJECTS=SimpleArraySum.o
 
-all: LonelyTest
+all: LonelyTest SimpleArraySumTest
 
 LonelyTest: LonelyInteger
 	./LonelyInteger < input/lonely1.txt
@@ -14,6 +15,13 @@ LonelyTest: LonelyInteger
 
 LonelyInteger: $(LONELY_OBJECTS)
 	$(CC) $(LDFLAGS) $(LONELY_OBJECTS) -o $@
+
+
+SimpleArraySumTest: SimpleArraySum
+	./SimpleArraySum < input/sum1.txt
+
+SimpleArraySum: $(SUM_OBJECTS)
+	$(CC) $(LDFLAGS) $(SUM_OBJECTS) -o $@
 
 
 .cpp.o:
