@@ -1,14 +1,20 @@
 CC=g++
-CFLAGS=-c -Wall -g
+CFLAGS=-c -Wall -g -std=c++11 -stdlib=libc++
 LDFLAGS=
-SOURCES=LonelyInteger.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=HackerRank
 
-all: $(SOURCES) $(EXECUTABLE)
+LONELY_OBJECTS=LonelyInteger.o
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+all: LonelyTest
+
+LonelyTest: LonelyInteger
+	./LonelyInteger < input/lonely1.txt
+	./LonelyInteger < input/lonely2.txt
+	./LonelyInteger < input/lonely3.txt
+
+LonelyInteger: $(LONELY_OBJECTS)
+	$(CC) $(LDFLAGS) $(LONELY_OBJECTS) -o $@
+
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
