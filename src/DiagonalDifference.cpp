@@ -19,7 +19,6 @@ int string_to_int( const string& str )
     return (stream >> res) ? res : 0;
 }
 
-
 int main() {
     size_t matrixSize;
     
@@ -59,3 +58,4 @@ int main() {
 
     return 0;
 }
+

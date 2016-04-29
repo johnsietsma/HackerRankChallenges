@@ -32,3 +32,5 @@ SimpleArraySum
 
 # VsCode
 .vscode/*
+
+/build/
